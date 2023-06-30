@@ -1,5 +1,5 @@
 /*ANALYSIS OF COVID DATA 
-Dataset Date Range: FROM 3rd January, 2020 t0 28th June ,2023	
+Dataset Date Range: FROM 8th January, 2020 t0 28th June ,2023	
 
 COVID19 DATA EXPLORATION BY  OLUWATOMISIN AROKODARE 06/30/2023
 Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
