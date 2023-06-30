@@ -1,14 +1,18 @@
--- ANALYSIS OF COVID DATA FROM 3rd January, 2020 t0 28th June ,2023	
-------BY OLUWATOMISIN AROKODARE 06/30/2023
+/*ANALYSIS OF COVID DATA 
+Dataset Date Range: FROM 3rd January, 2020 t0 28th June ,2023	
+
+COVID19 DATA EXPLORATION BY  OLUWATOMISIN AROKODARE 06/30/2023
+Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+*/
 
 SELECT *
 FROM CovidProject..CovidDeaths
-ORDER BY 3,4
+ORDER BY 3,4;
 
 SELECT *
 FROM CovidVaccinations
 WHERE continent IS NOT NULL
-ORDER BY 3,4
+ORDER BY 3,4;
 
 ----- THIS IS THE DATA WE ARE GOING TO BE STARTING WITH
 SELECT Location,date, total_cases, new_cases, total_deaths, population
@@ -37,7 +41,6 @@ AND continent IS NOT NULL
 ORDER BY 1, 2;
 
 ----COUNTRIES WITH HIGHEST INFECTION RATE COMPARED TO POPULATION
-
 SELECT Location, population, MAX(total_cases) AS HighestInfectionCount, MAX(cast(total_cases as decimal)/population) * 100 AS PercentPopulationInfected 
 FROM CovidDeaths
 WHERE continent IS NOT NULL
@@ -47,14 +50,14 @@ ORDER BY  PercentPopulationInfected DESC;
 ----CONTINENT WITH THE HIGHEST DEATH COUNT PER POPULATION (BREAKING IT DOWN BY CONTINENT)
 --We use where continent is null because if you check the excel sheet, the locations has the names of the continent in them, instead of the names of the countries.
 --This method gives you the accurate result if you want to break it down by continent
-----SHOWING LOCATION WITH THE HIGHEST DEATH COUNT PER POPULATION
+----LOCATION WITH THE HIGHEST DEATH COUNT PER POPULATION
 SELECT location, SUM(cast(new_deaths as int)) as Total_Death_Count
 FROM CovidDeaths
 WHERE continent IS NULL
 GROUP BY Location
 ORDER BY Total_Death_Count DESC;
 
---SHOWING THE CONTINENT WITH THE HIGHEST DEATH COUNT PER POPULATION
+-----CONTINENT WITH THE HIGHEST DEATH COUNT PER POPULATION
 -----However, we will use this for visualization purposes in order to drill down
 SELECT continent, SUM(cast(new_deaths AS int)) AS Total_Death_Count
 FROM CovidDeaths
@@ -171,4 +174,4 @@ FROM CovidDeaths
 WHERE continent is null 
 AND location not in ('World', 'European Union', 'International')
 Group by location
---order by Total_Death_Count desc
+---order by Total_Death_Count desc
