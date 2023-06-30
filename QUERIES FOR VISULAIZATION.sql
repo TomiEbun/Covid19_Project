@@ -45,7 +45,7 @@ SELECT continent, SUM(new_deaths) as Total_deaths
 FROM CovidProject..CovidDeaths
 WHERE continent is not NULL
 GROUP BY continent
-ORDER BY Total_deaths desc;
+ORDER BY Total_deaths DESC;
 
 
 --- 9 What are the total cases per continent ? 
@@ -56,11 +56,10 @@ GROUP BY continent
 ORDER BY Total_cases DESC;
 
 ---10 Global Numbers-(Death Percentage)
-Select SUM(new_cases) AS total_cases, SUM(cast(new_deaths AS int)) AS total_deaths, SUM(cast(new_deaths AS int))/SUM(New_Cases)*100 AS Death_Percentage
+SELECT SUM(new_cases) AS total_cases, SUM(cast(new_deaths AS int)) AS total_deaths, SUM(cast(new_deaths AS int))/SUM(New_Cases)*100 AS Death_Percentage
 FROM CovidProject..CovidDeaths
 WHERE continent IS NOT NULL
-order by 1,2
-
+ORDER BY 1,2
 
 --DEFINING METRICS  
 --Infection_rate = total_cases / population . Shows likelihood of getting infected per population */
@@ -87,8 +86,7 @@ WHERE continent is not NULL
 GROUP BY location,population
 ORDER BY Mortality_rate desc;
 
-
----- 14 What are the top countries with highest vaccination count?
+----14. What are the top countries with highest vaccination count?
 SELECT location, SUM(CAST(total_vaccinations AS BIGINT)) Totalvaccinations, SUM(CAST (people_vaccinated AS BIGINT)) People_vaccinated
 FROM CovidProject..CovidVaccinations
 WHERE continent is not NULL
@@ -97,7 +95,7 @@ ORDER BY People_vaccinated DESC;
 
 
 -- 15. What percentage of global population was infected ,and died ? 
-select SUM(CAST(total_deaths AS BIGINT)) Total_deaths,SUM(CAST(total_cases AS BIGINT)) Total_cases, 
+SELECT SUM(CAST(total_deaths AS BIGINT)) Total_deaths,SUM(CAST(total_cases AS BIGINT)) Total_cases, 
 	  round(SUM(CAST(total_cases/population AS BIGINT))*100,2) Globalinfectionrate
 FROM CovidProject..CovidDeaths
 
