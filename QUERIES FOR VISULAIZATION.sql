@@ -1,4 +1,4 @@
-----QUERIES FOR VISUALIZATION- BY OLUWATOMISIN AROKODARE 
+----QUERIES FOR VISUALIZATION USING POWERBI- BY OLUWATOMISIN AROKODARE 
 
 ---1 How many continents does the analysis cover? ----There are 6 continents 
 SELECT count(distinct(continent)) Total_Continents  
