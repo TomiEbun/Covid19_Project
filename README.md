@@ -6,7 +6,7 @@ Global preventive measures, including handwashing, face masks, social distancing
 
 In this project, I analyzed and explored covid data with SQL using Micrsoft SQL Server Management Studio.
 
-This covid-19 dataset was sourced from https://ourworldindata.org/covid-deaths starting from January 3rd,2020 to June 28th, 2023.
+This covid-19 dataset was sourced from https://ourworldindata.org/covid-deaths starting from January 8th,2020 to June 28th, 2023.
 
 ### SUMMARY OF THE FINDINGS 
 
