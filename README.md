@@ -34,3 +34,5 @@ INSIGHTS FROM THE PROJECTS
 11.On the 30th of January 2022, the highest number of covid-19 cases was recorded to be 8.40M.
 
 12.On the 24th of January 2021, the highest number of covid-19 death was recorded to 27.94k.
+
+The Link to my interactive Dashboard -https://www.novypro.com/project/covid-19-global-pandemic-analysis-report-power-bi
